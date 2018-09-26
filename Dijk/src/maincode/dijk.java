@@ -12,10 +12,12 @@ public class dijk {
 	public dijk(int start,int end){
 		dijk.start=start;
 		dijk.end=end;
+		
 		for(int i=0;i<get_Graph.Node;i++) {
 			dist[i]=(int)Integer.MAX_VALUE;
 			use_node[i]=i;
 		}
+		use_node[start]=-1;
 	}
 	public void get_nextNode(int Node) {
 		
@@ -36,7 +38,7 @@ public class dijk {
 				continue;
 			
 		}
-		use_node[Node]=-1;
+	//	use_node[Node]=-1;
 		check_empty(use_node);
 		check_min(dist);
 	}
@@ -47,6 +49,7 @@ public class dijk {
 			if(dist[i]<min &&use_node[i]>0) {
 				min=dist[i];
 				now_minNode=i;
+				use_node[i]=-1;
 			}
 		}
 		//use_node[now_minNode]=-1;

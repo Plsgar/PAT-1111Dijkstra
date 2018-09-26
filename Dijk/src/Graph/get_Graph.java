@@ -33,10 +33,12 @@ public class get_Graph {
 		get_Graph.Node=Node;
 		time=new int[Node][Node];
 		instance=new int[Node][Node];
+		C=new int[Node][Node];
 		for(int i=0;i<Node;i++) {
 			for(int j=0;j<Node;j++) {
 				time[i][j]=0;
 				instance[i][j]=0;
+				C[i][j]=0;
 			}
 		}
 	}
@@ -50,6 +52,13 @@ public class get_Graph {
 	}
 	public static int getG(int i,int j) {
 		return C[i][j];
+	}
+	public static void change_arr(int[][] c,int[][] arr,int Node) {
+		for(int i=0;i<Node;i++) {
+			for(int j=0;j<Node;j++) {
+				c[i][j]=arr[i][j];
+			}
+		}
 	}
 
 }

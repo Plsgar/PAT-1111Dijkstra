@@ -26,9 +26,8 @@ public class dijk_text {
 		start=scan.nextInt();
 		end=scan.nextInt();
 		dijk jj=new dijk(start,end);
+		get_Graph.change_arr(get_Graph.getC(), get_Graph.getInstance(), N);
 		get_Graph.setC(get_Graph.getInstance());
-		jj.get_nextNode(start);
-		get_Graph.setC(get_Graph.getTime());
 		jj.get_nextNode(start);
 		
 	}
